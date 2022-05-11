@@ -1,4 +1,4 @@
-module aws-lambdas-practice
+module github.com/gabrielsscti/gabriel/aws-lambdas-practice
 
 go 1.18
 

@@ -1,40 +1,16 @@
 package main
 
 import (
-	"encoding/json"
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
+	"github.com/gabrielsscti/gabriel/aws-lambdas-practice/Common/Movie"
 	"net/http"
 )
 
-var movies = []struct {
-	ID   int    `json:"id"`
-	Name string `json:"name"`
-}{
-	{
-		ID:   1,
-		Name: "Avengers",
-	},
-	{
-		ID:   2,
-		Name: "Ant-Man",
-	},
-	{
-		ID:   3,
-		Name: "Thor",
-	},
-	{
-		ID:   4,
-		Name: "Hulk",
-	},
-	{
-		ID:   5,
-		Name: "Doctor Strange",
-	},
-}
+var movieRepository Movie.Repository
 
-func findAll() (events.APIGatewayProxyResponse, error) {
-	response, err := json.Marshal(movies)
+func handler() (events.APIGatewayProxyResponse, error) {
+	response, err := movieRepository.GetAll()
 	if err != nil {
 		return events.APIGatewayProxyResponse{StatusCode: http.StatusInternalServerError}, err
 	}
@@ -49,5 +25,7 @@ func findAll() (events.APIGatewayProxyResponse, error) {
 }
 
 func main() {
-	lambda.Start(findAll)
+	movieRepository = Movie.CreateNewMockMovies()
+
+	lambda.Start(handler)
 }
