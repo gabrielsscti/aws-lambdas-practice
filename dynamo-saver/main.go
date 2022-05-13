@@ -8,7 +8,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/feature/dynamodb/attributevalue"
 	"github.com/aws/aws-sdk-go-v2/service/dynamodb"
-	"github.com/gabrielsscti/gabriel/aws-lambdas-practice/common/movie"
+	"github.com/gabrielsscti/aws-lambdas-practice-common/movie"
 	"io/ioutil"
 	"log"
 )

@@ -3,9 +3,9 @@ package main
 import (
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
-	"github.com/gabrielsscti/gabriel/aws-lambdas-practice/common"
-	"github.com/gabrielsscti/gabriel/aws-lambdas-practice/common/factory"
-	customLambda "github.com/gabrielsscti/gabriel/aws-lambdas-practice/common/lambda"
+	"github.com/gabrielsscti/aws-lambdas-practice-common"
+	"github.com/gabrielsscti/aws-lambdas-practice-common/factory"
+	customLambda "github.com/gabrielsscti/aws-lambdas-practice-common/lambda"
 	"net/http"
 )
 
